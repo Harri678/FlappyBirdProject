@@ -1,0 +1,43 @@
+﻿<Window x:Class="FlappyBirdProject.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:FlappyBirdProject"
+		mc:Ignorable="d"
+		Title="Flappy Bird"
+		Height="480"
+		Width="1000"
+		KeyDown="Window_KeyDown">
+	<Grid>
+		<!-- Háttér vízszintesen ismétlődő -->
+		<Grid.Background>
+			<ImageBrush ImageSource="Images/FlappyBirdBackground.png"
+						TileMode="Tile"
+						Viewport="0,0,0.5,1"
+						ViewportUnits="RelativeToBoundingBox"
+						Stretch="Fill" />
+		</Grid.Background>
+		
+		<Canvas x:Name="GameCanvas"
+				Background="Transparent"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Stretch">
+			
+			<Image x:Name="Bird"
+				   Source="/Images/FlappyBird.png"
+				   Width="60"
+				   Height="60"
+				   Canvas.Left="100"
+				   Canvas.Top="200" />
+		</Canvas>
+		
+		<Rectangle x:Name="FogLayer"
+				   Fill="LightGray"
+				   Opacity="0.4"
+				   Visibility="Hidden"
+				   IsHitTestVisible="False"
+				   HorizontalAlignment="Stretch"
+				   VerticalAlignment="Stretch" />
+	</Grid>
+</Window>
