@@ -8,9 +8,9 @@
 		Title="Flappy Bird"
 		Height="480"
 		Width="1000"
+		ResizeMode="NoResize"
 		KeyDown="Window_KeyDown">
 	<Grid>
-		<!-- Háttér vízszintesen ismétlődő -->
 		<Grid.Background>
 			<ImageBrush ImageSource="Images/FlappyBirdBackground.png"
 						TileMode="Tile"
@@ -18,20 +18,28 @@
 						ViewportUnits="RelativeToBoundingBox"
 						Stretch="Fill" />
 		</Grid.Background>
-		
 		<Canvas x:Name="GameCanvas"
+				Width="1000"
+				Height="480"
 				Background="Transparent"
 				HorizontalAlignment="Stretch"
 				VerticalAlignment="Stretch">
-			
 			<Image x:Name="Bird"
 				   Source="/Images/FlappyBird.png"
 				   Width="60"
 				   Height="60"
 				   Canvas.Left="100"
 				   Canvas.Top="200" />
+			<Image Height="161"
+				   x:Name="GroundImage"
+				   Canvas.Left="-8"
+				   Source="/Images/PikPng.com_scratch-png_474860.png"
+				   Stretch="Fill"
+				   Canvas.Top="404"
+				   Width="1035"
+				   HorizontalAlignment="Left"
+				   VerticalAlignment="Top" />
 		</Canvas>
-		
 		<Rectangle x:Name="FogLayer"
 				   Fill="LightGray"
 				   Opacity="0.4"

@@ -12,6 +12,8 @@
     <None Remove="Images\FlappyBird.png" />
     <None Remove="Images\FlappyBirdBackground.png" />
     <None Remove="Images\FlappyBirdBackground2.png" />
+    <None Remove="Images\PikPng.com_scratch-png_474860.png" />
+    <None Remove="Images\pipe.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,6 +21,12 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\FlappyBirdBackground.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\PikPng.com_scratch-png_474860.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\pipe.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
