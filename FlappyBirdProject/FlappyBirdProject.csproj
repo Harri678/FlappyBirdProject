@@ -14,6 +14,11 @@
     <None Remove="Images\FlappyBirdBackground2.png" />
     <None Remove="Images\PikPng.com_scratch-png_474860.png" />
     <None Remove="Images\pipe.png" />
+    <None Remove="Images\RainGif.gif" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,6 +32,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\pipe.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\RainGif.gif">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

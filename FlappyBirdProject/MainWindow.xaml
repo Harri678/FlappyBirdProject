@@ -10,6 +10,8 @@
 		Width="1000"
 		ResizeMode="NoResize"
 		KeyDown="Window_KeyDown">
+	
+	
 	<Grid>
 		<Grid.Background>
 			<ImageBrush ImageSource="Images/FlappyBirdBackground.png"
@@ -18,6 +20,12 @@
 						ViewportUnits="RelativeToBoundingBox"
 						Stretch="Fill" />
 		</Grid.Background>
+		<Image x:Name="RainLayer"
+			   Stretch="Fill"
+			   Opacity="0.6"
+			   Visibility="Hidden"
+			   IsHitTestVisible="False" />
+		
 		<Canvas x:Name="GameCanvas"
 				Width="1000"
 				Height="480"
@@ -40,12 +48,66 @@
 				   HorizontalAlignment="Left"
 				   VerticalAlignment="Top" />
 		</Canvas>
+		
 		<Rectangle x:Name="FogLayer"
 				   Fill="LightGray"
-				   Opacity="0.4"
+				   Opacity="0.97"
 				   Visibility="Hidden"
 				   IsHitTestVisible="False"
 				   HorizontalAlignment="Stretch"
 				   VerticalAlignment="Stretch" />
+		
+		
+		<Grid x:Name="MenuPanel"
+			  Background="#AA000000">
+			<StackPanel HorizontalAlignment="Center"
+						VerticalAlignment="Center"
+						Width="300">
+				<TextBlock Text="FLAPPY BIRD"
+						   Foreground="White"
+						   FontSize="36"
+						   HorizontalAlignment="Center"
+						   Margin="0,0,0,20" />
+				<Button Content="Start Game"
+						Height="50"
+						Click="StartGame_Click" />
+				<ToggleButton x:Name="RainToggle"
+							  Content="Eső"
+							  Height="45"
+							  Margin="0,5"
+							  Checked="RainToggle_Checked"
+							  Unchecked="RainToggle_Unchecked" />
+				<ToggleButton x:Name="FogToggle"
+							  Content="Köd"
+							  Height="45"
+							  Margin="0,5"
+							  Checked="FogToggle_Checked"
+							  Unchecked="FogToggle_Unchecked" />
+			</StackPanel>
+		</Grid>
+		<Grid x:Name="GameOverPanel"
+			  Background="#AA000000"
+			  Visibility="Hidden"
+			  Panel.ZIndex="20">
+			<StackPanel HorizontalAlignment="Center"
+						VerticalAlignment="Center"
+						Width="300">
+				<TextBlock Text="GAME OVER"
+						   Foreground="Red"
+						   FontSize="40"
+						   FontWeight="Bold"
+						   HorizontalAlignment="Center"
+						   Margin="0,0,0,20" />
+				<TextBlock x:Name="ScoreText"
+						   Foreground="White"
+						   FontSize="20"
+						   HorizontalAlignment="Center"
+						   Margin="0,0,0,20" />
+				<Button Content="Restart"
+						Height="45"
+						Margin="0,5"
+						Click="Restart_Click" />
+			</StackPanel>
+		</Grid>
 	</Grid>
 </Window>
