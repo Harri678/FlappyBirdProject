@@ -32,8 +32,8 @@ namespace FlappyBirdProject
 		bool fogActive = false;
 		int fogTimer = 0;
 
-		int fogOnTime = 300;
-		int fogOffTime = 100;
+		int fogOnTime = 150;
+		int fogOffTime = 50;
 
 
 
@@ -139,6 +139,11 @@ namespace FlappyBirdProject
 
 				Rect groundRect = GetGroundRect();
 				if (birdRect.IntersectsWith(groundRect))
+				{
+					EndGame();
+					return;
+				}
+				if (birdRect.Top <= 0)
 				{
 					EndGame();
 					return;

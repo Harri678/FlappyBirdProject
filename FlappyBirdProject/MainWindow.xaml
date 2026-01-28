@@ -48,18 +48,32 @@
 				   HorizontalAlignment="Left"
 				   VerticalAlignment="Top" />
 		</Canvas>
-		
 		<Rectangle x:Name="FogLayer"
-				   Fill="LightGray"
-				   Opacity="0.97"
+				   Fill="White"
 				   Visibility="Hidden"
 				   IsHitTestVisible="False"
 				   HorizontalAlignment="Stretch"
-				   VerticalAlignment="Stretch" />
-		
-		
+				   VerticalAlignment="Stretch"
+				   Panel.ZIndex="5">
+			<Rectangle.OpacityMask>
+				<LinearGradientBrush StartPoint="0,0"
+									 EndPoint="1,0">
+					<GradientStop Color="#00FFFFFF"
+								  Offset="0.0" />
+					<GradientStop Color="#33FFFFFF"
+								  Offset="0.1" />
+					<GradientStop Color="#AAFFFFFF"
+								  Offset="0.25" />
+					<GradientStop Color="#EEFFFFFF"
+								  Offset="0.45" />
+					<GradientStop Color="#FFFFFFFF"
+								  Offset="1.0" />
+				</LinearGradientBrush>
+			</Rectangle.OpacityMask>
+		</Rectangle>
 		<Grid x:Name="MenuPanel"
-			  Background="#AA000000">
+			  Background="#AA000000"
+			  Panel.ZIndex="15">
 			<StackPanel HorizontalAlignment="Center"
 						VerticalAlignment="Center"
 						Width="300">
